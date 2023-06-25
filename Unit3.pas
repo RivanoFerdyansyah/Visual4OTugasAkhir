@@ -177,7 +177,7 @@ begin
 id:=dbgrd1.DataSource.DataSet.FieldByName('id_wali').AsString;
 ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update tabel_wali_kelas set nik= "'+Edit1.Text+'",nama="'+Edit2.Text+'",jenis_kelamin="'+cbb1.Text+'",pendidikan="'+Edit3.Text+'",telp="'+Edit4.Text+'",matpel="'+Edit5.Text+'",alamat="'+Edit6.Text+'",status="'+Edit7.Text+'" where id_wali="'+id+'"');
+zqry1.SQL.Add('Update tabel_wali_kelas set nik= "'+Edit1.Text+'",nama="'+Edit2.Text+'",pendidikan="'+cbb1.Text+'",telp="'+Edit3.Text+'",jenis_kelamin="'+Edit4.Text+'",alamat="'+Edit5.Text+'",mata_pelajaran="'+Edit6.Text+'",status="'+Edit7.Text+'" where id_wali="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -223,9 +223,9 @@ Button5.Enabled:= True;
 id:=zqry1.Fields[0].AsString;
 Edit1.Text:= zqry1.FieldList[1].AsString;
 Edit2.Text:= zqry1.FieldList[2].AsString;
-cbb1.Text:= zqry1.FieldList[3].AsString;
-Edit3.Text:= zqry1.FieldList[4].AsString;
-Edit4.Text:= zqry1.FieldList[5].AsString;
+Edit3.Text:= zqry1.FieldList[3].AsString;
+Edit4.Text:= zqry1.FieldList[4].AsString;
+cbb1.Text:= zqry1.FieldList[5].AsString;
 Edit5.Text:= zqry1.FieldList[6].AsString;
 Edit6.Text:= zqry1.FieldList[7].AsString;
 Edit7.Text:= zqry1.FieldList[8].AsString;
