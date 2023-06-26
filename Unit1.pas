@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, DB, ZAbstractRODataset, ZAbstractDataset,
-  ZDataset, ZAbstractConnection, ZConnection, StdCtrls;
+  ZDataset, ZAbstractConnection, ZConnection, StdCtrls, frxClass, frxDBSet;
 
 type
   TForm1 = class(TForm)
@@ -30,7 +30,6 @@ type
     Edit7: TEdit;
     Edit8: TEdit;
     Edit9: TEdit;
-    Edit10: TEdit;
     cbb1: TComboBox;
     Button1: TButton;
     Button2: TButton;
@@ -42,10 +41,19 @@ type
     ds1: TDataSource;
     dbgrd1: TDBGrid;
     Button6: TButton;
+    frxDBsiswa: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    cbb2: TComboBox;
     procedure awal;
     procedure FormShow(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
+    procedure editenable;
   private
     { Private declarations }
   public
@@ -54,6 +62,7 @@ type
 
 var
   Form1: TForm1;
+  id : String;
 
 implementation
 
@@ -70,8 +79,8 @@ Edit6.Enabled:= False;
 Edit7.Enabled:= False;
 Edit8.Enabled:= False;
 Edit9.Enabled:= False;
-Edit10.Enabled:= False;
 cbb1.Enabled:= False;
+cbb2.Enabled:= False;
 
 Button1.Enabled:= False;
 Button2.Enabled:= False;
@@ -97,7 +106,7 @@ Edit6.Enabled:= True;
 Edit7.Enabled:= True;
 Edit8.Enabled:= True;
 Edit9.Enabled:= True;
-Edit10.Enabled:= True;
+cbb2.Enabled:= True;
 cbb1.Enabled:= True;
 
 Button1.Enabled:= True;
@@ -116,20 +125,122 @@ Edit6.Clear;
 Edit7.Clear;
 Edit8.Clear;
 Edit9.Clear;
-Edit10.Clear;
+cbb2.Text:= '';
 cbb1.Text:= '';
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+if (Edit1.Text= '')or (Edit2.Text ='')or(Edit3.Text= '')or (Edit4.Text= '')or (Edit5.Text ='') or (Edit6.Text= '')or (cbb1.Text ='') or (Edit7.Text= '') or (Edit8.Text= '') or (Edit9.Text= '') or (cbb2.Text= '') then
+begin
+ShowMessage('DATA TIDAK BOLEH KOSONG!');
+end else
+if (zqry1.Locate('nis',Edit1.Text,[])) and (zqry1.Locate('nisn',Edit2.Text,[])) and (zqry1.Locate('nama',Edit3.Text,[])) and (zqry1.Locate('nik',Edit4.Text,[])) and (zqry1.Locate('tempat_lahir',Edit5.Text,[])) and (zqry1.Locate('tgl_lahir',Edit6.Text,[])) and (zqry1.Locate('jenis_kelamin',cbb1.Text,[])) and (zqry1.Locate('alamat',Edit7.Text,[])) and (zqry1.Locate('telpon',Edit8.Text,[]))  and (zqry1.Locate('hp',Edit9.Text,[])) and (zqry1.Locate('status',cbb1.Text,[]))then
+begin
+ShowMessage('DATA WALI KELAS SUDAH DIGUNAKAN');
+awal;
+end else
 zqry1.SQL.Clear;
-zqry1.SQL.Add('insert into table_siswa values(null,"'+Edit1.Text+'","'+Edit2.Text+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'","'+Edit6.Text+'","'+cbb1.Text+'","'+Edit7.Text+'","'+Edit8.Text+'","'+Edit9.Text+'","'+Edit10.Text+'")');
+zqry1.SQL.Add('insert into table_siswa values(null,"'+Edit1.Text+'","'+Edit2.Text+'","'+Edit3.Text+'","'+Edit4.Text+'","'+Edit5.Text+'","'+Edit6.Text+'","'+cbb1.Text+'","'+Edit7.Text+'","'+Edit8.Text+'","'+Edit9.Text+'","'+cbb2.Text+'")');
 zqry1.ExecSQL ;
 
 zqry1.SQL.Clear;
 zqry1.SQL.Add('select * from table_siswa');
 zqry1.Open;
 awal;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+if (Edit1.Text= '')or (Edit2.Text ='')or(Edit3.Text= '')or (Edit4.Text= '')or (Edit5.Text ='') or (Edit6.Text= '')or (cbb1.Text ='') or (Edit7.Text= '') or (Edit8.Text= '') or (Edit9.Text= '') or (cbb2.Text= '')then
+begin
+ShowMessage('INPUTAN WAJIB DIISI!');
+end else
+if (Edit1.Text = zqry1.Fields[1].AsString) and (Edit2.Text = zqry1.Fields[2].AsString) and (Edit3.Text = zqry1.Fields[3].AsString) and (Edit4.Text = zqry1.Fields[4].AsString) and (Edit5.Text = zqry1.Fields[5].AsString) and (Edit6.Text = zqry1.Fields[6].AsString) and (cbb1.Text = zqry1.Fields[7].AsString)and (Edit7.Text = zqry1.Fields[8].AsString) and (Edit8.Text = zqry1.Fields[9].AsString) and (Edit9.Text = zqry1.Fields[10].AsString) and (cbb2.Text = zqry1.Fields[11].AsString)then
+begin
+ShowMessage('DATA TIDAK ADA PERUBAHAN');
+awal;
+end else
+begin
+id:=dbgrd1.DataSource.DataSet.FieldByName('id_siswa').AsString;
+ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
+zqry1.SQL.Clear;
+zqry1.SQL.Add('Update table_siswa set nis= "'+Edit1.Text+'",nisn="'+Edit2.Text+'",nama="'+Edit3.Text+'",nik="'+Edit4.Text+'",tempat_lahir="'+Edit5.Text+'",tgl_lahir="'+Edit6.Text+'",jenis_kelamin="'+cbb1.Text+'",alamat="'+Edit7.Text+'",telpon="'+Edit8.Text+'",hp="'+Edit9.Text+'",status="'+cbb2.Text+'" where id_siswa="'+id+'"');
+zqry1. ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from table_siswa');
+zqry1.Open;
+awal;
+end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+id:=dbgrd1.DataSource.DataSet.FieldByName('id_siswa').AsString;
+zqry1.SQL.Clear;
+zqry1.SQL.Add(' delete from tabel_wali_kelas where id_siswa="'+id+'"');
+zqry1. ExecSQL;
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from table_siswa');
+zqry1.Open;
+ShowMessage('DATA BERHASIL DIHAPUS');
+awal;
+end else
+begin
+ShowMessage('DATA BATAL DIHAPUS');
+awal;
+end;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+awal;
+end;
+
+procedure TForm1.dbgrd1CellClick(Column: TColumn);
+begin
+editenable;
+Button1.Enabled:= true;
+Button2.Enabled:= True;
+Button3.Enabled:= True;
+Button4.Enabled:= True;
+Button5.Enabled:= True;
+Button6.Enabled:= False;
+id:=zqry1.Fields[0].AsString;
+Edit1.Text:= zqry1.FieldList[1].AsString;
+Edit2.Text:= zqry1.FieldList[2].AsString;
+Edit3.Text:= zqry1.FieldList[3].AsString;
+Edit4.Text:= zqry1.FieldList[4].AsString;
+Edit5.Text:= zqry1.FieldList[5].AsString;
+Edit6.Text:= zqry1.FieldList[6].AsString;
+cbb1.Text:= zqry1.FieldList[7].AsString;
+Edit7.Text:= zqry1.FieldList[8].AsString;
+Edit8.Text:= zqry1.FieldList[9].AsString;
+Edit9.Text:= zqry1.FieldList[10].AsString;
+cbb2.Text:= zqry1.FieldList[11].AsString;
+end;
+
+procedure TForm1.editenable;
+begin
+edit1.Enabled:= True;
+edit2.Enabled:= True;
+cbb1.Enabled:= True;
+edit3.Enabled:= True;
+edit4.Enabled:= True;
+edit5.Enabled:= True;
+edit6.Enabled:= True;
+edit7.Enabled:= True;
+edit8.Enabled:= True;
+edit9.Enabled:= True;
+cbb2.Enabled:= True;
 end;
 
 end.

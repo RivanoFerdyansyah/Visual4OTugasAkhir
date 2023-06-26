@@ -1,6 +1,6 @@
 object Form4: TForm4
-  Left = 202
-  Top = 147
+  Left = 281
+  Top = 138
   Width = 972
   Height = 568
   Caption = 'Form Poin'
@@ -150,6 +150,7 @@ object Form4: TForm4
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object Button6: TButton
     Left = 56

@@ -41,6 +41,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -145,10 +146,10 @@ ShowMessage('DATA TIDAK ADA PERUBAHAN');
 awal;
 end else
 begin
-id:=dbgrd1.DataSource.DataSet.FieldByName('id_wali').AsString;
+id:=dbgrd1.DataSource.DataSet.FieldByName('id_poin').AsString;
 ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update tabel_poin set nama_poin= "'+Edit1.Text+'",bobot="'+Edit2.Text+'",jenis="'+cbb1.Text+'",status="'+cbb2.Text+'" where id_wali="'+id+'"');
+zqry1.SQL.Add('Update tabel_poin set nama_poin= "'+Edit1.Text+'",bobot="'+Edit2.Text+'",jenis="'+cbb1.Text+'",status="'+cbb2.Text+'" where id_poin="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -186,6 +187,22 @@ end;
 procedure TForm4.Button5Click(Sender: TObject);
 begin
 frxReport1.ShowReport();
+end;
+
+procedure TForm4.dbgrd1CellClick(Column: TColumn);
+begin
+editenable;
+Button1.Enabled:= True;
+Button2.Enabled:= True;
+Button3.Enabled:= True;
+Button4.Enabled:= True;
+Button5.Enabled:= True;
+Button6.Enabled:= False;
+id:=zqry1.Fields[0].AsString;
+Edit1.Text:= zqry1.FieldList[1].AsString;
+Edit2.Text:= zqry1.FieldList[2].AsString;
+cbb1.Text:= zqry1.FieldList[3].AsString;
+cbb2.Text:= zqry1.FieldList[4].AsString;
 end;
 
 end.

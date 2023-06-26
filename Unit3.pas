@@ -143,7 +143,7 @@ if (Edit1.Text= '')or (Edit2.Text ='')or (Edit3.Text= '')or (Edit4.Text ='') or(
 begin
 ShowMessage('DATA TIDAK BOLEH KOSONG!');
 end else
-if (zqry1.Locate('nik',Edit1.Text,[])) and (zqry1.Locate('nama',Edit2.Text,[])) then
+if (zqry1.Locate('nik',Edit1.Text,[])) and (zqry1.Locate('nama',Edit2.Text,[])) and (zqry1.Locate('pendidikan',Edit3.Text,[])) and (zqry1.Locate('telp',Edit4.Text,[])) and (zqry1.Locate('jenis_kelamin',cbb1.Text,[])) and (zqry1.Locate('alamat',Edit5.Text,[])) and (zqry1.Locate('mata_pelajaran',Edit6.Text,[])) and (zqry1.Locate('status',Edit7.Text,[])) then
 begin
 ShowMessage('DATA WALI KELAS SUDAH DIGUNAKAN');
 awal;
@@ -177,7 +177,7 @@ begin
 id:=dbgrd1.DataSource.DataSet.FieldByName('id_wali').AsString;
 ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update tabel_wali_kelas set nik= "'+Edit1.Text+'",nama="'+Edit2.Text+'",pendidikan="'+cbb1.Text+'",telp="'+Edit3.Text+'",jenis_kelamin="'+Edit4.Text+'",alamat="'+Edit5.Text+'",mata_pelajaran="'+Edit6.Text+'",status="'+Edit7.Text+'" where id_wali="'+id+'"');
+zqry1.SQL.Add('Update tabel_wali_kelas set nik= "'+Edit1.Text+'",nama="'+Edit2.Text+'",pendidikan="'+Edit3.Text+'",telp="'+Edit4.Text+'",jenis_kelamin="'+cbb1.Text+'",alamat="'+Edit5.Text+'",mata_pelajaran="'+Edit6.Text+'",status="'+Edit7.Text+'" where id_wali="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;
@@ -215,11 +215,12 @@ end;
 procedure TForm3.dbgrd1CellClick(Column: TColumn);
 begin
 editenable;
-Button1.Enabled:= true;
-Button2.Enabled:= False;
+Button1.Enabled:= True;
+Button2.Enabled:= True;
 Button3.Enabled:= True;
 Button4.Enabled:= True;
 Button5.Enabled:= True;
+Button6.Enabled:= False;
 id:=zqry1.Fields[0].AsString;
 Edit1.Text:= zqry1.FieldList[1].AsString;
 Edit2.Text:= zqry1.FieldList[2].AsString;
