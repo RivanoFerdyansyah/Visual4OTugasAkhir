@@ -10,12 +10,15 @@ uses
   Unit6 in 'Unit6.pas' {Form6},
   Unit7 in 'Unit7.pas' {Form7},
   Unit8 in 'Unit8.pas' {Form8},
-  Unit9 in 'Unit9.pas' {Form9};
+  Unit9 in 'Unit9.pas' {Form9},
+  Login in 'Login.pas' {Form10},
+  Daftar in 'Daftar.pas' {Form11};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  Application.CreateForm(TForm10, Form10);
   Application.CreateForm(TForm9, Form9);
   Application.CreateForm(TForm7, Form7);
   Application.CreateForm(TForm6, Form6);
@@ -25,5 +28,6 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm4, Form4);
   Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TForm11, Form11);
   Application.Run;
 end.

@@ -1,6 +1,6 @@
 object Form9: TForm9
-  Left = 743
-  Top = 166
+  Left = 346
+  Top = 106
   Width = 578
   Height = 438
   Caption = 'Menu Utama'
@@ -99,6 +99,15 @@ object Form9: TForm9
     TabOrder = 7
     OnClick = Button8Click
   end
+  object Button9: TButton
+    Left = 456
+    Top = 304
+    Width = 57
+    Height = 25
+    Caption = 'LOG OUT'
+    TabOrder = 8
+    OnClick = Button8Click
+  end
   object mm1: TMainMenu
     Left = 24
     Top = 16
@@ -136,6 +145,10 @@ object Form9: TForm9
         Caption = 'HUBUNGAN'
         OnClick = HUBUNGAN1Click
       end
+    end
+    object EXIT1: TMenuItem
+      Caption = 'LOG OUT'
+      OnClick = EXIT1Click
     end
   end
 end

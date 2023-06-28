@@ -27,6 +27,8 @@ type
     ORANGTUA1: TMenuItem;
     KELAS1: TMenuItem;
     HUBUNGAN1: TMenuItem;
+    Button9: TButton;
+    EXIT1: TMenuItem;
     procedure SISWA1Click(Sender: TObject);
     procedure WALIKELAS1Click(Sender: TObject);
     procedure USER1Click(Sender: TObject);
@@ -43,6 +45,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure EXIT1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,7 +57,7 @@ var
 
 implementation
 
-uses Unit1, Unit3, Unit6, Unit8, Unit4, Unit5, Unit2, Unit7;
+uses Unit1, Unit3, Unit6, Unit8, Unit4, Unit5, Unit2, Unit7, Login;
 
 {$R *.dfm}
 
@@ -130,12 +133,17 @@ end;
 
 procedure TForm9.Button8Click(Sender: TObject);
 begin
-form7.showmodal;
+form10.showmodal;
 end;
 
 procedure TForm9.Button6Click(Sender: TObject);
 begin
 form5.showmodal;
+end;
+
+procedure TForm9.EXIT1Click(Sender: TObject);
+begin
+form10.showmodal;
 end;
 
 end.
