@@ -36,6 +36,7 @@ type
     procedure dbgrd1CellClick(Column: TColumn);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -157,6 +158,31 @@ end;
 procedure TForm2.Button5Click(Sender: TObject);
 begin
 frxReport1.ShowReport();
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+if (Edit1.Text= '')or (Edit2.Text ='')or(cbb1.Text= '')then
+begin
+ShowMessage('INPUTAN WAJIB DIISI!');
+end else
+if (Edit1.Text = zqry1.Fields[1].AsString) and (Edit2.Text = zqry1.Fields[2].AsString) and (cbb1.Text = zqry1.Fields[3].AsString)then
+begin
+ShowMessage('DATA TIDAK ADA PERUBAHAN');
+awal;
+end else
+begin
+id:=dbgrd1.DataSource.DataSet.FieldByName('id_kelas').AsString;
+ShowMessage('DATA BERHASIL DIUPDATE!'); //UPDATE
+zqry1.SQL.Clear;
+zqry1.SQL.Add('Update tabel_kelas set nama= "'+Edit1.Text+'",jenis="'+Edit2.Text+'",jurusan="'+cbb1.Text+'" where id_kelas="'+id+'"');
+zqry1. ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from tabel_kelas');
+zqry1.Open;
+awal;
+end;
 end;
 
 end.

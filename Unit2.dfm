@@ -96,6 +96,7 @@ object Form2: TForm2
     Height = 49
     Caption = 'EDIT'
     TabOrder = 3
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 368
@@ -205,7 +206,7 @@ object Form2: TForm2
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45102.845091296300000000
-    ReportOptions.LastChange = 45102.852357592600000000
+    ReportOptions.LastChange = 45105.952502824080000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -351,7 +352,7 @@ object Form2: TForm2
           Width = 124.724490000000000000
           Height = 22.677180000000000000
           ShowHint = False
-          DataField = 'tingkat'
+          DataField = 'nama'
           DataSet = frxDBkelas1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -362,7 +363,7 @@ object Form2: TForm2
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."tingkat"]')
+            '[frxDBDataset1."nama"]')
           ParentFont = False
         end
         object Memo8: TfrxMemoView
