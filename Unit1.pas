@@ -137,7 +137,7 @@ ShowMessage('DATA TIDAK BOLEH KOSONG!');
 end else
 if (zqry1.Locate('nis',Edit1.Text,[])) and (zqry1.Locate('nisn',Edit2.Text,[])) and (zqry1.Locate('nama',Edit3.Text,[])) and (zqry1.Locate('nik',Edit4.Text,[])) and (zqry1.Locate('tempat_lahir',Edit5.Text,[])) and (zqry1.Locate('tgl_lahir',Edit6.Text,[])) and (zqry1.Locate('jenis_kelamin',cbb1.Text,[])) and (zqry1.Locate('alamat',Edit7.Text,[])) and (zqry1.Locate('telpon',Edit8.Text,[]))  and (zqry1.Locate('hp',Edit9.Text,[])) and (zqry1.Locate('status',cbb1.Text,[]))then
 begin
-ShowMessage('DATA WALI KELAS SUDAH DIGUNAKAN');
+ShowMessage('DATA SISWA SUDAH DIGUNAKAN');
 awal;
 end else
 zqry1.SQL.Clear;
