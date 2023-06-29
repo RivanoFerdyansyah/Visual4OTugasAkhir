@@ -4,7 +4,7 @@ object Form1: TForm1
   Width = 1103
   Height = 602
   Caption = 'Form Siswa'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

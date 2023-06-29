@@ -1,10 +1,10 @@
 object Form6: TForm6
-  Left = 527
-  Top = 119
-  Width = 711
-  Height = 543
+  Left = 640
+  Top = 108
+  Width = 741
+  Height = 573
   Caption = 'Form User'
-  Color = clBtnFace
+  Color = clInfoBk
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -251,7 +251,7 @@ object Form6: TForm6
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45102.887726504600000000
-    ReportOptions.LastChange = 45105.600683761570000000
+    ReportOptions.LastChange = 45105.600683761600000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'

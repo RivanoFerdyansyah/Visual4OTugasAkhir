@@ -4,7 +4,7 @@ object Form3: TForm3
   Width = 928
   Height = 538
   Caption = 'Form Wali Kelas'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

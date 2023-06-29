@@ -4,7 +4,7 @@ object Form7: TForm7
   Width = 1096
   Height = 619
   Caption = 'Form Hubungan'
-  Color = clBtnFace
+  Color = clInfoBk
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 618
-  Top = 209
+  Left = 336
+  Top = 202
   Width = 564
   Height = 400
   Caption = 'Form Login'
@@ -65,6 +65,7 @@ object Form10: TForm10
     Top = 120
     Width = 121
     Height = 21
+    PasswordChar = '*'
     TabOrder = 1
   end
   object Button1: TButton

@@ -4,7 +4,7 @@ object Form8: TForm8
   Width = 1247
   Height = 573
   Caption = 'Form Semester'
-  Color = clBtnFace
+  Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

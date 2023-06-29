@@ -78,7 +78,8 @@ end;
 
 procedure TForm10.Button3Click(Sender: TObject);
 begin
-form11.showmodal;
+  Hide;
+form11.show;
 end;
 
 end.

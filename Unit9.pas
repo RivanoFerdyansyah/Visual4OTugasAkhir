@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, Menus, StdCtrls;
+  Dialogs, Menus, StdCtrls, frxpngimage, ExtCtrls;
 
 type
   TForm9 = class(TForm)
@@ -27,8 +27,9 @@ type
     ORANGTUA1: TMenuItem;
     KELAS1: TMenuItem;
     HUBUNGAN1: TMenuItem;
-    Button9: TButton;
     EXIT1: TMenuItem;
+    Button9: TButton;
+    img1: TImage;
     procedure SISWA1Click(Sender: TObject);
     procedure WALIKELAS1Click(Sender: TObject);
     procedure USER1Click(Sender: TObject);
@@ -46,6 +47,7 @@ type
     procedure Button8Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure EXIT1Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -133,7 +135,7 @@ end;
 
 procedure TForm9.Button8Click(Sender: TObject);
 begin
-form10.showmodal;
+form7.showmodal;
 end;
 
 procedure TForm9.Button6Click(Sender: TObject);
@@ -143,7 +145,14 @@ end;
 
 procedure TForm9.EXIT1Click(Sender: TObject);
 begin
-form10.showmodal;
+hide;
+form10.show;
+end;
+
+procedure TForm9.Button9Click(Sender: TObject);
+begin
+hide;
+form10.Show;
 end;
 
 end.

@@ -1,0 +1,12 @@
+Form 1 = Siswa
+Form 2 = Kelas
+Form 3 = Wali Kelas
+Form 4 = Poin
+Form 5 = Orang Tua
+Form 6 = User
+Form 7 = Hubungan
+Form 8 = Semester
+Form 9 = Menu Utama
+Form 10 = Login
+Form 11 = Daftar
+
