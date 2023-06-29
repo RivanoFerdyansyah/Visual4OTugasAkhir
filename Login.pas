@@ -19,10 +19,13 @@ type
     con1: TZConnection;
     zqry1: TZQuery;
     Button3: TButton;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure awal;
   private
     { Private declarations }
   public
@@ -63,12 +66,12 @@ hide;
 Form9.Show;
 end;
 end;
+awal;
 end;
 
 procedure TForm10.FormShow(Sender: TObject);
 begin
-Edit1.text:='';
-Edit2.text:='';
+awal;
 end;
 
 procedure TForm10.Button2Click(Sender: TObject);
@@ -80,6 +83,17 @@ procedure TForm10.Button3Click(Sender: TObject);
 begin
   Hide;
 form11.show;
+end;
+
+procedure TForm10.Button4Click(Sender: TObject);
+begin
+awal;
+end;
+
+procedure TForm10.awal;
+begin
+Edit1.Clear;
+Edit2.Clear;
 end;
 
 end.

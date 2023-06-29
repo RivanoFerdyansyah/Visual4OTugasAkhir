@@ -142,12 +142,12 @@ cbb1.Text:= zqry1.Fields[3].AsString;
 Edit1.Enabled:= True;
 Edit2.Enabled:= True;
 cbb1.Enabled:= True;
-Button1.Enabled:= True;
+Button1.Enabled:= False;
 Button2.Enabled:= True;
 Button3.Enabled:= True;
 Button4.Enabled:= True;
 Button5.Enabled:= True;
-Button6.Enabled:= false;
+Button6.Enabled:= False;
 end;
 
 procedure TForm2.Button4Click(Sender: TObject);

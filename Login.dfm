@@ -1,6 +1,6 @@
 object Form10: TForm10
-  Left = 336
-  Top = 202
+  Left = 429
+  Top = 182
   Width = 564
   Height = 400
   Caption = 'Form Login'
@@ -79,7 +79,7 @@ object Form10: TForm10
   end
   object Button2: TButton
     Left = 272
-    Top = 160
+    Top = 216
     Width = 97
     Height = 41
     Caption = 'EXIT'
@@ -87,13 +87,22 @@ object Form10: TForm10
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 216
+    Left = 144
     Top = 216
     Width = 97
     Height = 41
     Caption = 'DAFTAR'
     TabOrder = 4
     OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 272
+    Top = 160
+    Width = 97
+    Height = 41
+    Caption = 'BATAL'
+    TabOrder = 5
+    OnClick = Button4Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
@@ -108,8 +117,8 @@ object Form10: TForm10
     User = 'root'
     Protocol = 'mysql'
     LibraryLocation = 'G:\Kuliah\Visual 2 Semester 4\TugasAkhir\libmysql.dll'
-    Left = 72
-    Top = 240
+    Left = 32
+    Top = 24
   end
   object zqry1: TZQuery
     Connection = con1
@@ -117,7 +126,7 @@ object Form10: TForm10
     SQL.Strings = (
       'select * from tabel_user')
     Params = <>
-    Left = 136
-    Top = 240
+    Left = 96
+    Top = 24
   end
 end

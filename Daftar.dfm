@@ -1,6 +1,6 @@
 object Form11: TForm11
-  Left = 375
-  Top = 173
+  Left = 665
+  Top = 180
   Width = 544
   Height = 392
   Caption = 'Form Daftar'
@@ -102,11 +102,11 @@ object Form11: TForm11
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 272
+    Left = 384
     Top = 248
-    Width = 97
+    Width = 129
     Height = 41
-    Caption = 'EXIT'
+    Caption = 'KEMBALI KE LOGIN'
     TabOrder = 3
     OnClick = Button2Click
   end
@@ -118,9 +118,8 @@ object Form11: TForm11
     ItemHeight = 13
     TabOrder = 4
     Items.Strings = (
-      'Pelajar'
-      'Guru'
-      'Ortu')
+      'Admin'
+      'User')
   end
   object cbb2: TComboBox
     Left = 248
@@ -133,6 +132,15 @@ object Form11: TForm11
       'Ortu'
       'Siswa'
       'Wali')
+  end
+  object Button3: TButton
+    Left = 264
+    Top = 248
+    Width = 97
+    Height = 41
+    Caption = 'BATAL'
+    TabOrder = 6
+    OnClick = Button3Click
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP

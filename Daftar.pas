@@ -22,8 +22,11 @@ type
     cbb2: TComboBox;
     Label4: TLabel;
     Label5: TLabel;
+    Button3: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure awal;
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +41,14 @@ implementation
 uses Login;
 
 {$R *.dfm}
+
+procedure TForm11.awal;
+begin
+Edit1.Clear;
+Edit2.Clear;
+cbb1.text:='';
+cbb2.text:='';
+end;
 
 procedure TForm11.Button1Click(Sender: TObject);
 begin
@@ -64,11 +75,19 @@ Form10.zqry1.Active := true;
 
 ShowMessage('DATA BERHASIL DISIMPAN!!');
 end;
+awal;
 end;
 
 procedure TForm11.Button2Click(Sender: TObject);
 begin
-form10.ShowModal;
+  awal;
+close;
+form10.Show;
+end;
+
+procedure TForm11.Button3Click(Sender: TObject);
+begin
+awal;
 end;
 
 end.

@@ -251,12 +251,12 @@ end;
 procedure TForm8.dbgrd1CellClick(Column: TColumn);
 begin
 editenable;
-button1.Enabled:= True;
-button2.Enabled:= False;
-button3.Enabled:= True;
-button4.Enabled:= True;
-button5.Enabled:= True;
-button6.Enabled:= True;
+Button1.Enabled:= False;
+Button2.Enabled:= True;
+Button3.Enabled:= True;
+Button4.Enabled:= True;
+Button5.Enabled:= True;
+Button6.Enabled:= False;
 id:=zqry1.Fields[0].AsString;
 cbb1.Text:= zqry1.FieldList[1].AsString;
 cbb2.Text:= zqry1.FieldList[2].AsString;

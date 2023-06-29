@@ -1,12 +1,17 @@
-Form 1 = Siswa
-Form 2 = Kelas
-Form 3 = Wali Kelas
-Form 4 = Poin
-Form 5 = Orang Tua
-Form 6 = User
-Form 7 = Hubungan
-Form 8 = Semester
-Form 9 = Menu Utama
-Form 10 = Login
-Form 11 = Daftar
+Aplikasi Sekolah
+Rivano Ferdyansyah
+2110010411
+40 Reg Pagi BJM
+
+(unit1.pas)Form 1 = Siswa
+(unit2.pas)Form 2 = Kelas
+(unit3.pas)Form 3 = Wali Kelas
+(unit4.pas)Form 4 = Poin
+(unit5.pas)Form 5 = Orang Tua
+(unit6.pas)Form 6 = User
+(unit7.pas)Form 7 = Hubungan
+(unit8.pas)Form 8 = Semester
+(unit9.pas)Form 9 = Menu Utama
+(unit10.pas)Form 10 = Login
+(unit11.pas)Form 11 = Daftar
 

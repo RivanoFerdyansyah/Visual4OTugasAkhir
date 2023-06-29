@@ -208,7 +208,7 @@ end;
 procedure TForm1.dbgrd1CellClick(Column: TColumn);
 begin
 editenable;
-Button1.Enabled:= true;
+Button1.Enabled:= False;
 Button2.Enabled:= True;
 Button3.Enabled:= True;
 Button4.Enabled:= True;
